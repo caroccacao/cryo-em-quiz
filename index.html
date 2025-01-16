@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cryo-EM Quiz</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .question { margin: 20px 0; }
+    button { padding: 10px 15px; background-color: #007BFF; color: #fff; border: none; cursor: pointer; }
+    button:hover { background-color: #0056b3; }
+  </style>
+</head>
+<body>
+  <h1>Cryo-EM Beginner Quiz</h1>
+  <form id="quizForm">
+    <div class="question">
+      <p><strong>1. What does "cryo" in cryo-EM stand for?</strong></p>
+      <label><input type="radio" name="q1" value="a"> Crystals</label><br>
+      <label><input type="radio" name="q1" value="b"> Cryogenics</label><br>
+      <label><input type="radio" name="q1" value="c"> Cryonics</label><br>
+      <label><input type="radio" name="q1" value="d"> Crystal Electrons</label>
+    </div>
+    <div class="question">
+      <p><strong>2. What is vitrification?</strong></p>
+      <label><input type="radio" name="q2" value="a"> Freezing water into crystalline ice</label><br>
+      <label><input type="radio" name="q2" value="b"> Staining the sample with chemicals</label><br>
+      <label><input type="radio" name="q2" value="c"> Rapidly freezing water into a glass-like state</label><br>
+      <label><input type="radio" name="q2" value="d"> Heating the sample</label>
+    </div>
+    <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+  </form>
+  <p id="result"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>

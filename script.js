@@ -1,7 +1,7 @@
 const questions = [
   {
     category: "Cryo-SPA",
-    question: "1. What does 'SPA' in cryo-SPA stand for?",
+    question: "What does 'SPA' in cryo-SPA stand for?",
     options: [
       "Single Particle Analysis",
       "Special Particle Alignment",
@@ -12,7 +12,7 @@ const questions = [
   },
   {
     category: "Cryo-SPA",
-    question: "2. What is the primary purpose of cryo-SPA?",
+    question: "What is the primary purpose of cryo-SPA?",
     options: [
       "Studying small molecules",
       "Determining 3D structures of individual particles",
@@ -23,7 +23,7 @@ const questions = [
   },
   {
     category: "Cryo-TOMO",
-    question: "3. What is cryo-TOMO used for?",
+    question: "What is cryo-TOMO used for?",
     options: [
       "2D imaging of proteins",
       "3D imaging of cellular environments",
@@ -34,7 +34,7 @@ const questions = [
   },
   {
     category: "Cryo-TOMO",
-    question: "4. Why is thinning a sample important in cryo-TOMO?",
+    question: "Why is thinning a sample important in cryo-TOMO?",
     options: [
       "To improve beam alignment",
       "To ensure electrons can pass through for imaging",
@@ -42,6 +42,28 @@ const questions = [
       "To prevent thermal damage"
     ],
     correct: "To ensure electrons can pass through for imaging"
+  },
+  {
+    category: "Cryo-SPA sample preparation",
+    question: "What is the leading parameter on the Vitrobot that affects ice thickness?",
+    options: [
+      "Blot force",
+      "Blot time",
+      "Humidity",
+      "Viscosity"
+    ],
+    correct: "Blot time"
+  },
+  {
+    category: "Cryo-SPA sample preparation",
+    question: "How fast does the temperature need to drop to create vitrified ice?",
+    options: [
+      "100 K/s",
+      "1000 K/s",
+      "10000 K/s",
+      "100000 K/s"
+    ],
+    correct: "100000 K/s"
   }
 ];
 

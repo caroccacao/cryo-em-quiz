@@ -103,10 +103,8 @@ def phase_quiz():
     )
 
     if quiz_choice == "Phase Contrast":
-        st.subheader("Quiz: Phase Contrast")
         render_quiz("Quiz: Phase Contrast", questions_phase, key_prefix="phase")
     else:
-        st.subheader("Quiz: CryoEM - Day 1")
         render_quiz("Quiz: CryoEM - Day 1", questions_cryoEM, key_prefix="cryoEM")
 
     if st.sidebar.button("Reset answers"):

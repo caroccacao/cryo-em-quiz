@@ -86,9 +86,6 @@ def phase_quiz():
     if st.sidebar.button("Reset answers"):
         st.rerun()
 
-
-if __name__ == "__main__":
-    app()
-
 if __name__ == "__main__":
     phase_quiz()
+

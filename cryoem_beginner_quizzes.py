@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 def render_quiz(title: str, questions: list[dict], key_prefix: str = "quiz"):
     st.subheader(title)
 
@@ -11,11 +12,11 @@ def render_quiz(title: str, questions: list[dict], key_prefix: str = "quiz"):
             label="",
             options=q["options"],
             key=key,
-            index=None,          # nichts vor-ausgewählt
-            horizontal=False
+            index=None,  # nichts vor-ausgewählt
         )
 
         if choice is None:
+            st.divider()
             continue
 
         if choice == q["answer"]:
@@ -70,7 +71,7 @@ def phase_quiz():
          "explanation": "They developed cryo-EM methods enabling high-resolution structure determination of biomolecules."}
     ]
 
-     questions_phase = [
+    questions_phase = [
         {"question": "1. What happens when two waves meet in a medium?",
          "options": ["They pass through each other unchanged", "They interfere, either constructively or destructively", "They stop moving", "They disappear"],
          "answer": "They interfere, either constructively or destructively",
@@ -92,23 +93,30 @@ def phase_quiz():
          "explanation": "Electrons do not slow down significantly but experience phase shifts when interacting with the electrostatic potential of biological samples."},
 
         {"question": "5. Why do we need phase contrast techniques in cryo-EM?",
-         "options": ["Because biological samples strongly absorb electrons", "Because biological samples mainly cause phase shifts, not amplitude changes", "Because electrons cannot interfere", "Because it increases sample temperature"],
+         "options": ["Because biological samples strongly absorb electrons",
+                     "Because biological samples mainly cause phase shifts, not amplitude changes",
+                     "Because electrons cannot interfere",
+                     "Because it increases sample temperature"],
          "answer": "Because biological samples mainly cause phase shifts, not amplitude changes",
          "explanation": "Biological samples in cryo-EM cause phase shifts rather than absorbing electrons, making phase contrast methods necessary for visualization."}
     ]
 
     quiz_choice = st.sidebar.selectbox(
         "Select Quiz",
-        ["Quiz Day 1 - CryoEM Warm-up","Quiz Day 2 - Phase Contrast",]
+        ["Quiz Day 1 - CryoEM Warm-up", "Quiz Day 2 - Phase Contrast"]
     )
 
-    if quiz_choice == "Phase Contrast":
+    if quiz_choice == "Quiz Day 2 - Phase Contrast":
         render_quiz("Quiz: Phase Contrast", questions_phase, key_prefix="phase")
     else:
         render_quiz("Quiz: CryoEM - Day 1", questions_cryoEM, key_prefix="cryoEM")
 
     if st.sidebar.button("Reset answers"):
+        for k in list(st.session_state.keys()):
+            if k.startswith(("phase_", "cryoEM_")):
+                del st.session_state[k]
         st.rerun()
+
 
 if __name__ == "__main__":
     phase_quiz()

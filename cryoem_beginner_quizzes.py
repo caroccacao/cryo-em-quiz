@@ -1,7 +1,34 @@
 import streamlit as st
 
+def render_quiz(title: str, questions: list[dict], key_prefix: str = "quiz"):
+    st.subheader(title)
+
+    for i, q in enumerate(questions, start=1):
+        st.markdown(f"**{q['question']}**")
+
+        key = f"{key_prefix}_q{i}"
+        choice = st.radio(
+            label="",
+            options=q["options"],
+            key=key,
+            index=None,          # nichts vor-ausgewählt
+            horizontal=False
+        )
+
+        if choice is None:
+            continue
+
+        if choice == q["answer"]:
+            st.success("✅ Correct!")
+        else:
+            st.error(f"❌ Not quite. Correct answer: **{q['answer']}**")
+
+        st.caption(q["explanation"])
+        st.divider()
+
+
 def phase_quiz():
-    st.title("Interactive Phase Contrast Quiz")
+    st.title("CryoEM Course 2026 Quizzes")
 
     questions_phase = [
         {"question": "1. What happens when two waves meet in a medium?",

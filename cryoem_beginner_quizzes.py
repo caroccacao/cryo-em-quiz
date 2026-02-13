@@ -84,10 +84,12 @@ def phase_quiz():
                      "Aaron Klug, Rosalind Franklin, Francis Crick",
                      "Kary Mullis, Frederick Sanger, John Walker"],
          "answer": "Jacques Dubochet, Joachim Frank, Richard Henderson",
-         "explanation": "They developed cryo-EM methods enabling high-resolution structure determination of biomolecules."},
+         "explanation": "They developed cryo-EM methods enabling high-resolution structure determination of biomolecules. 
+         Ruska also got a noble prize. Ernst Ruska received the 1986 Nobel Prize in Physics for foundational work on the electron microscope, (not cryo-EM). 
+         Dennis Gabor received the 1971 Nobel Prize in Physics for holography; Max Knoll did not receive a Nobel Prize.")
     ]
 
-    questions_phase = [
+        questions_phase = [
         {"question": "1. What happens when two waves meet in a medium?",
          "options": ["They pass through each other unchanged",
                      "They interfere, either constructively or destructively",
@@ -160,7 +162,7 @@ def phase_quiz():
     # ----------------------
     quiz_choice = st.sidebar.selectbox(
         "Select Quiz",
-        ["Quiz Day 1 - CryoEM Warm-up", "Quiz Day 2 - Phase Contrast", "Quiz Day 3 - Molecular Modelling"],
+        ["Quiz Day 1 - CryoEM Warm-up", "Quiz Day 2 - Phase Contrast", "Quiz Day 5 - Molecular Modelling"],
     )
 
     if quiz_choice == "Quiz Day 2 - Phase Contrast":

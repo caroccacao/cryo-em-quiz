@@ -101,22 +101,69 @@ def phase_quiz():
          "explanation": "Biological samples in cryo-EM cause phase shifts rather than absorbing electrons, making phase contrast methods necessary for visualization."}
     ]
 
-    quiz_choice = st.sidebar.selectbox(
-        "Select Quiz",
-        ["Quiz Day 1 - CryoEM Warm-up", "Quiz Day 2 - Phase Contrast"]
-    )
+    questions_modelling = [
+    {"question": "1. In cryo-EM, a molecular model is best described as:",
+     "options": [
+         "A raw experimental image",
+         "A mathematical filter applied to images",
+         "An interpretation of the density map based on prior structural knowledge",
+         "A list of amino acid sequences"
+     ],
+     "answer": "An interpretation of the density map based on prior structural knowledge",
+     "explanation": "A molecular model is an interpreted atomic representation fitted to the cryo-EM density map, guided by chemistry/geometry and prior structural knowledge."},
 
-    if quiz_choice == "Quiz Day 2 - Phase Contrast":
-        render_quiz("Quiz: Phase Contrast", questions_phase, key_prefix="phase")
-    else:
-        render_quiz("Quiz: CryoEM - Day 1", questions_cryoEM, key_prefix="cryoEM")
+    {"question": "2. Which of the following is NOT a common application of molecular modelling?",
+     "options": [
+         "Comparing molecular structures",
+         "Visualizing macromolecular complexes",
+         "Predicting molecular interactions",
+         "Measuring gene expression levels"
+     ],
+     "answer": "Measuring gene expression levels",
+     "explanation": "Gene expression is typically measured using transcriptomics/proteomics methods, not molecular modelling."},
 
-    if st.sidebar.button("Reset answers"):
-        for k in list(st.session_state.keys()):
-            if k.startswith(("phase_", "cryoEM_")):
-                del st.session_state[k]
-        st.rerun()
+    {"question": "3. What does “de novo” modelling refer to?",
+     "options": [
+         "Building a model without prior structural templates",
+         "Refining an existing crystal structure",
+         "Simulating molecular motion over time",
+         "Aligning protein sequences"
+     ],
+     "answer": "Building a model without prior structural templates",
+     "explanation": "De novo modelling means building a model from scratch (e.g., from the density/map features) without relying on an existing structural template."},
 
+    {"question": "4. Which resolution range typically allows backbone tracing in cryo-EM maps?",
+     "options": [
+         ">10 Å",
+         "~5 Å or better",
+         "~20 Å",
+         "Only atomic resolution (<1 Å)"
+     ],
+     "answer": "~5 Å or better",
+     "explanation": "Around ~5 Å (and better), secondary structure becomes clear enough to trace backbone paths reliably; side chains typically require higher resolution."},
+
+    {"question": "5. Which of the following is a software package used for molecular modelling (and NOT a ninja turtle)?",
+     "options": [
+         "Modelnatello",
+         "Modelphael",
+         "Modelnardo",
+         "Modelangelo"
+     ],
+     "answer": "Modelangelo",
+     "explanation": "ModelAngelo is a real tool for model building/interpretation in cryo-EM; the others are jokes based on the ninja turtles."},
+]
+
+quiz_choice = st.sidebar.selectbox(
+    "Select Quiz",
+    ["Quiz Day 1 - CryoEM Warm-up", "Quiz Day 2 - Phase Contrast", "Quiz Day 3 - Molecular Modelling"]
+)
+
+if quiz_choice == "Quiz Day 2 - Phase Contrast":
+    render_quiz("Quiz: Phase Contrast", questions_phase, key_prefix="phase")
+elif quiz_choice == "Quiz Day 3 - Molecular Modelling":
+    render_quiz("Quiz: Molecular Modelling", questions_modelling, key_prefix="model")
+else:
+    render_quiz("Quiz: CryoEM - Day 1", questions_cryoEM, key_prefix="cryoEM")
 
 if __name__ == "__main__":
     phase_quiz()

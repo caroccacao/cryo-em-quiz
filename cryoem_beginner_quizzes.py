@@ -80,14 +80,15 @@ def phase_quiz():
 
         {"question": "7. Who received the 2017 Nobel Prize in Chemistry for cryo-EM development?",
          "options": ["Jacques Dubochet, Joachim Frank, Richard Henderson",
-                     "Ernst Ruska, Max Knoll, Dennis Gabor",
-                     "Aaron Klug, Rosalind Franklin, Francis Crick",
-                     "Kary Mullis, Frederick Sanger, John Walker"],
+                    "Ernst Ruska, Max Knoll, Dennis Gabor",
+                    "Aaron Klug, Rosalind Franklin, Francis Crick",
+                    "Kary Mullis, Frederick Sanger, John Walker"],
          "answer": "Jacques Dubochet, Joachim Frank, Richard Henderson",
-         "explanation": "They developed cryo-EM methods enabling high-resolution structure determination of biomolecules. Ernst Ruska received the 1986 Nobel Prize in Physics for foundational work on the electron microscope, (not cryo-EM). 
-         Dennis Gabor received the 1971 Nobel Prize in Physics for holography; Max Knoll did not receive a Nobel Prize."},
+         "explanation": "They received the 2017 Nobel Prize in Chemistry for developing cryo-EM into a method for high-resolution structure determination of biomolecules."
+         "Ernst Ruska received the 1986 Nobel Prize in Physics for foundational work on the electron microscope (not cryo-EM). "
+         "Dennis Gabor received the 1971 Nobel Prize in Physics for holography; Max Knoll did not receive a Nobel Prize."},
     ]
-
+    
     questions_phase = [
         {"question": "1. What happens when two waves meet in a medium?",
          "options": ["They pass through each other unchanged",

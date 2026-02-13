@@ -168,7 +168,7 @@ def phase_quiz():
     if quiz_choice == "Quiz Day 2 - Phase Contrast":
         render_quiz("Quiz: Phase Contrast", questions_phase, key_prefix="phase")
         prefixes = ("phase_",)
-    elif quiz_choice == "Quiz Day 3 - Molecular Modelling":
+    elif quiz_choice == "Quiz Day 5 - Molecular Modelling":
         render_quiz("Quiz: Molecular Modelling", questions_modelling, key_prefix="model")
         prefixes = ("model_",)
     else:

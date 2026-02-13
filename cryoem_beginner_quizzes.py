@@ -85,7 +85,7 @@ def phase_quiz():
                      "Kary Mullis, Frederick Sanger, John Walker"],
          "answer": "Jacques Dubochet, Joachim Frank, Richard Henderson",
          "explanation": "They developed cryo-EM methods enabling high-resolution structure determination of biomolecules. Ernst Ruska received the 1986 Nobel Prize in Physics for foundational work on the electron microscope, (not cryo-EM). 
-         Dennis Gabor received the 1971 Nobel Prize in Physics for holography; Max Knoll did not receive a Nobel Prize.")
+         Dennis Gabor received the 1971 Nobel Prize in Physics for holography; Max Knoll did not receive a Nobel Prize."},
     ]
 
     questions_phase = [

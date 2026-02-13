@@ -88,7 +88,7 @@ def phase_quiz():
          Dennis Gabor received the 1971 Nobel Prize in Physics for holography; Max Knoll did not receive a Nobel Prize.")
     ]
 
-        questions_phase = [
+    questions_phase = [
         {"question": "1. What happens when two waves meet in a medium?",
          "options": ["They pass through each other unchanged",
                      "They interfere, either constructively or destructively",
